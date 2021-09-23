@@ -12,5 +12,5 @@ public class GradeGroup {
     @Id
     private String id;
     private String description;
-
+    private List<GradeInstance> gradeInstances;
 }
