@@ -1,16 +1,17 @@
 package com.coasters.stats.domains;
 
-
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Data
+import java.util.List;
+
 @Document
-@AllArgsConstructor
-public class GradeInstance {
+@Data
+public class GradingThresholds {
     @Id
     private String id;
-    private Float score;
+    private List<Float> scoreThresholds;
+    private List<String> valueLetter;
+    private List<Float> valueNumerical;
 }
