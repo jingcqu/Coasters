@@ -1,0 +1,6 @@
+spring:
+  profiles: mongoEmbedDev
+  data:
+    mongo:
+      port: 0
+      host: localhost
