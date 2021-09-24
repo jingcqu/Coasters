@@ -1,14 +1,14 @@
 package com.coasters.stats.domains;
-
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @Document
-public class CourseInstance {
+public class Department {
     @Id
     private String id;
-    private CourseGroup courseGroup;
-    private GradingThresholds gradingThresholds;
+    private String name;
+    private String description;
+    private College college;
 }

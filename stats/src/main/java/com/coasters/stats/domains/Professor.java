@@ -10,5 +10,5 @@ public class Professor {
     @Id
     private String id;
     private String name;
-    
+
 }
