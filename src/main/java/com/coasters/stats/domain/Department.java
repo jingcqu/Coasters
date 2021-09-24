@@ -1,7 +1,10 @@
-package com.coasters.stats.domains;
+package com.coasters.stats.domain;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @Document
@@ -11,4 +14,5 @@ public class Department {
     private String name;
     private String description;
     private College college;
+    private Set<Course> courses = new HashSet<>();
 }

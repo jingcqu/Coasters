@@ -1,15 +1,16 @@
-package com.coasters.stats.domains;
+package com.coasters.stats.domain;
 
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @Document
-public class CourseGroup {
+@AllArgsConstructor
+public class GradeInstance {
     @Id
     private String id;
-    private Course course;
-    private String section;
-    private Professor professor;
+    private Float score;
 }

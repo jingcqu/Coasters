@@ -1,14 +1,16 @@
-package com.coasters.stats.domains;
+package com.coasters.stats.domain;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
+
 @Data
 @Document
-public class CourseInstance {
+public class GradeGroup {
     @Id
     private String id;
-    private CourseGroup courseGroup;
-    private GradingThresholds gradingThresholds;
+    private String description;
+    private List<GradeInstance> gradeInstances;
 }

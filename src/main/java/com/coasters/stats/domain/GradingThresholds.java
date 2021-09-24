@@ -1,4 +1,4 @@
-package com.coasters.stats.domains;
+package com.coasters.stats.domain;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
