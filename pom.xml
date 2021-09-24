@@ -56,18 +56,6 @@
 			<artifactId>reactor-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.codehaus.mojo/cobertura-maven-plugin -->
-		<dependency>
-			<groupId>org.codehaus.mojo</groupId>
-			<artifactId>cobertura-maven-plugin</artifactId>
-			<version>2.7</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>tools</artifactId>
-					<groupId>com.sun</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
 
 
 	</dependencies>
@@ -98,6 +86,19 @@
 					</formats>
 					<check/>
 				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>cobertura-maven-plugin</artifactId>
+						<version>2.7</version>
+						<exclusions>
+							<exclusion>
+								<artifactId>tools</artifactId>
+								<groupId>com.sun</groupId>
+							</exclusion>
+						</exclusions>
+					</dependency>
+				</dependencies>
 
 			</plugin>
 
