@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Use the latest 2.1 version of CircleCI pipeline process engine.
+=======
+# Use the latest 2.1 version of CircleCI pipeline process engine. 
+>>>>>>> parent of e4675e5 (Delete root circle config)
 =======
 # Use the latest 2.1 version of CircleCI pipeline process engine. 
 >>>>>>> parent of e4675e5 (Delete root circle config)
@@ -9,7 +13,11 @@ version: 2.1
 jobs:
   # Below is the definition of your job to build and test your app, you can rename and customize it as you want.
 <<<<<<< HEAD
+<<<<<<< HEAD
   build-and-test:
+=======
+  build-and-test:  
+>>>>>>> parent of e4675e5 (Delete root circle config)
 =======
   build-and-test:  
 >>>>>>> parent of e4675e5 (Delete root circle config)
@@ -37,7 +45,11 @@ workflows:
   # CircleCI will run this workflow on every commit.
   # For more details on extending your workflow, see the configuration docs: https://circleci.com/docs/2.0/configuration-reference/#workflows
 <<<<<<< HEAD
+<<<<<<< HEAD
   sample:
+=======
+  sample: 
+>>>>>>> parent of e4675e5 (Delete root circle config)
 =======
   sample: 
 >>>>>>> parent of e4675e5 (Delete root circle config)
