@@ -5,7 +5,7 @@
 ## Decription
 
 A Reactive Web application using the Spring Framework, WebFlux and ReactJS
-Generates statistics on the student’s course work given user input: Student would \ 
-enter grades so far, set criteria for certain letter grades and they can see the wiggle \ 
+Generates statistics on the student’s course work given user input: Student would <br /> 
+enter grades so far, set criteria for certain letter grades and they can see the wiggle <br /> 
 room they have for future assignments 
 Also See grade distribution for the class / Teacher
