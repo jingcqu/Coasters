@@ -9,18 +9,19 @@ jobs:
     steps:
       - checkout
       - node/with-cache:
-        - run:
-            name: Install Dependencies
-            command: cd client && npm ci
-        - run:
-            name: Run ReactJS Tests
-            command: cd client && npm test
-        - run:
-            name: Gen Coverage for ReactJS Frontend
-            command: cd client && npm coverage
-        - run:
-            name: Send to CodeCov
-            command: cd client && npm codecov
+          steps:
+            - run:
+                name: Install Dependencies
+                command: cd client && npm ci
+            - run:
+                name: Run ReactJS Tests
+                command: cd client && npm test
+            - run:
+                name: Gen Coverage for ReactJS Frontend
+                command: cd client && npm coverage
+            - run:
+                name: Send to CodeCov
+                command: cd client && npm codecov
 
   # Below is the definition of your job to build and test your app, you can rename and customize it as you want.
   build-and-test:  
