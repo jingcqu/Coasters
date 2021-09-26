@@ -6,15 +6,13 @@ jobs:
   reactjs-build-and-test:
     docker:
       - image: circleci/node:14
-    working_directory: ~/client
     steps:
-      - checkout:
-          path: ~/client
+      - checkout
       - restore_cache:
           key: npm-cache-v1-{{ checksum "client/package-lock.json" }}
       - run:
           name: Install Dependencies
-          command: pwd && npm ci
+          command: cd client && npm ci
       - save_cache:
           key: npm-cache-v1-{{ checksum "client/package-lock.json" }}
           paths:
