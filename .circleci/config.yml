@@ -5,7 +5,7 @@ version: 2.1
 jobs:
   reactjs-build-and-test:
     docker:
-      - image: circleci/node:14
+      - image: circleci/node:14.17-browsers
     steps:
       - checkout
       - restore_cache:
