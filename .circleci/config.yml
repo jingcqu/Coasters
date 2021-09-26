@@ -8,18 +8,19 @@ jobs:
       - image: circleci/node:14
     steps:
       - checkout
-      - restore_cache:
-          key: npm-cache-v1-{{ checksum "client/package-lock.json" }}
-      - run:
-          name: Install Dependencies
-          command: cd client && npm ci
-      - save_cache:
-          key: npm-cache-v1-{{ checksum "client/package-lock.json" }}
-          paths:
-            - /home/circleci/.npm
-      - run:
-          name: Run ReactJS Tests
-          command: cd client && npm test
+      - node/with-cache:
+        - run:
+            name: Install Dependencies
+            command: cd client && npm ci
+        - run:
+            name: Run ReactJS Tests
+            command: cd client && npm test
+        - run:
+            name: Gen Coverage for ReactJS Frontend
+            command: cd client && npm coverage
+        - run:
+            name: Send to CodeCov
+            command: cd client && npm codecov
 
   # Below is the definition of your job to build and test your app, you can rename and customize it as you want.
   build-and-test:  
