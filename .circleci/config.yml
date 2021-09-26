@@ -8,6 +8,9 @@ jobs:
       - image: circleci/node:14
     working_directory: ~/client
     steps:
+      - run:
+          - name: debug
+          - command: ls -alt
       - checkout
       - restore_cache:
           key: npm-cache-v1-{{ checksum "client/package-lock.json" }}
