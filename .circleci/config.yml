@@ -21,14 +21,13 @@ jobs:
           name: Run ReactJS Tests
           command: cd client && npm test
       - run:
-          name: Initializing Yarn
-          command: cd client && yarn install
-      - run:
-          name: Gen Coverage for ReactJS Frontend
-          command: cd client && yarn coverage
+          name: "Run jest and collect coverage reports"
+          command: cd client && jest --collectCoverage
+      - store_artifacts:
+          path: client/coverage
       - run:
           name: Send to CodeCov
-          command: cd client && yarn codecov
+          command: bash <(curl -s https://codecov.io/bash)
 
 
   # Below is the definition of your job to build and test your app, you can rename and customize it as you want.
