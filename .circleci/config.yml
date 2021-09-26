@@ -13,7 +13,7 @@ jobs:
           key: npm-cache-v1-{{ checksum "client/package-lock.json" }}
       - run:
           name: Install Dependencies
-          command: ls -alt && npm ci
+          command: ls -alt client/* && npm ci
       - save_cache:
           key: npm-cache-v1-{{ checksum "client/package-lock.json" }}
           paths:
