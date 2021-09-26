@@ -2,12 +2,12 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 orbs:
-  node: circleci/node:14
+  node: circleci/node@14
 
 jobs:
   reactjs-build-and-test:
     docker:
-      - image: circleci/node:14
+      - image: node/default
     steps:
       - checkout
       - node/with-cache:
