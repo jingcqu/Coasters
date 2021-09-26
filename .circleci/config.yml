@@ -6,6 +6,7 @@ jobs:
   reactjs-build-and-test:
     docker:
       - image: circleci/node:14
+    working_directory: ~/client
     steps:
       - checkout
       - restore_cache:
