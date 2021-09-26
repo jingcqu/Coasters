@@ -6,8 +6,8 @@ orbs:
 
 jobs:
   reactjs-build-and-test:
-    docker:
-      - image: node/default
+    executor:
+      - name: node/default
     steps:
       - checkout
       - node/with-cache:
