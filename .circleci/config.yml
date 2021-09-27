@@ -23,9 +23,13 @@ jobs:
       - run:
           name: Run NPM install to get jest
           command: cd client && npm install
+      - save_cache:
+          key: npm-cache-v1-{{ checksum "client/package-lock.json" }}
+          paths:
+            - client/node_modules
       - run:
           name: "Run jest and collect coverage reports"
-          command: cd client && jest --collectCoverage
+          command: cd client && node_modules/jest/bin/jest --collectCoverage
       - store_artifacts:
           path: client/coverage
       - run:
