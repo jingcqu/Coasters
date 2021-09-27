@@ -19,9 +19,12 @@ jobs:
             - /home/circleci/.npm
       - run:
           name: Run ReactJS Tests
-          command: cd client && npm test -- --json --outputFile=output.json
+          command: cd client && npm test -- --json --outputFile=coverage.json
+      - run:
+          name: mv output to root for codecov
+          command: client/coverage.json .
       - store_test_results:
-          path: client/output.json
+          path: coverage.json
       - run:
           name: Send to CodeCov
           command: bash <(curl -s https://codecov.io/bash)
