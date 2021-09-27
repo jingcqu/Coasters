@@ -22,7 +22,7 @@ jobs:
           command: cd client && npm test -- --json --outputFile=coverage.json
       - run:
           name: mv output to root for codecov
-          command: client/coverage.json .
+          command: mv client/coverage.json .
       - store_test_results:
           path: coverage.json
       - run:
