@@ -4,11 +4,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.UUID;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class CourseInstanceDTO {
-    private String id;
+    private UUID id;
     private GradingThresholdsDTO gradingThresholds;
     private CourseTermDTO courseTerm;
 }

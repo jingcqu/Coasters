@@ -5,12 +5,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Set;
+import java.util.UUID;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class CourseGroupDTO {
-    private String id;
+    private UUID id;
     private CourseDTO course;
     private String section;
     private ProfessorDTO professor;

@@ -8,10 +8,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.Set;
 import java.util.UUID;
 
+/**
+ * author: jingcqu
+ * on: 24/09/2021
+ */
 @Data
 public class CourseGroup {
     @Id
-    private String id = UUID.randomUUID().toString();
+    private UUID id;
     private Course course;
     @Indexed(unique = true)
     private String section;

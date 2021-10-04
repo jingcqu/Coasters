@@ -6,12 +6,13 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 
 import java.util.Set;
+import java.util.UUID;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class CollegeDTO {
-    private String id;
+    private UUID id;
     private String name;
     private String description;
 }

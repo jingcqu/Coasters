@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 
+import java.util.UUID;
+
 /**
  * author: jingcqu
  * on: 24/09/2021
@@ -14,7 +16,7 @@ import org.springframework.data.annotation.Id;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AddressDTO {
-    private String id;
+    private UUID id;
     private String state;
     private String city;
     private String streetAddress;

@@ -7,12 +7,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.UUID;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class DepartmentDTO {
-    private String id;
+    private UUID id;
     private String name;
     private String description;
 }

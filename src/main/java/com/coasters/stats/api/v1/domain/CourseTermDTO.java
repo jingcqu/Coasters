@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 
+import java.util.UUID;
+
 /**
  * author: jingcqu
  * on: 24/09/2021
@@ -14,7 +16,7 @@ import org.springframework.data.annotation.Id;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CourseTermDTO {
-    private String id;
+    private UUID id;
     private String description; //fall, spring, winter, summer, summer 1, etc
     private String year; //Example: academic year in form of 21-22
     private CourseGroupDTO courseGroup;
