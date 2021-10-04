@@ -1,17 +1,18 @@
 package com.coasters.stats.api.v1.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.Indexed;
+import lombok.NoArgsConstructor;
 
 import java.util.Set;
-import java.util.UUID;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class CourseGroupDTO {
     private String id;
     private CourseDTO course;
     private String section;
-    private Professor professor;
+    private ProfessorDTO professor;
     private Set<CourseTermDTO> courseTerms;
 }

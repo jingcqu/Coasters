@@ -1,6 +1,8 @@
 package com.coasters.stats.api.v1.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -8,12 +10,10 @@ import java.util.Set;
 
 
 @Data
-@Document
-public class School {
-    @Id
+@AllArgsConstructor
+@NoArgsConstructor
+public class SchoolDTO {
     private String id;
-    private Address address;
     private String name;
     private String description;
-    private Set<College> colleges;
 }

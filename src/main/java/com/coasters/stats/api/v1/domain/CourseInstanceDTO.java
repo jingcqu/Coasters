@@ -1,13 +1,14 @@
 package com.coasters.stats.api.v1.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import lombok.NoArgsConstructor;
 
 @Data
-@Document
+@AllArgsConstructor
+@NoArgsConstructor
 public class CourseInstanceDTO {
     private String id;
-    private GradingThresholds gradingThresholds;
+    private GradingThresholdsDTO gradingThresholds;
     private CourseTermDTO courseTerm;
 }
