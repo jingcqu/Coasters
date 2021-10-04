@@ -16,13 +16,13 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/{userId}")
-    public Mono<UserDTO> getUserById(@PathVariable("userId") UUID userId){
+    public Mono<UserDTO> getUserById(@PathVariable("userId") UUID userId){ //todo: write tests before further implementation
         return userService.getUserDTOById(userId);
     }
 
 
     @PostMapping("/create")
-    public Mono<UserDTO> createUser(UserDTO userDTO){  //todo: update param
+    public Mono<UserDTO> createUser(UserDTO userDTO){  //todo: update param and write tests before further implementation
         return userService.createUser(userDTO); //todo: pass post stream to function
     }
 }

@@ -17,12 +17,12 @@ public class DashBoardController {
     private DashBoardService dashBoardService;
 
     @GetMapping("/courseList/{userId}")
-    public Flux<CourseGroupDTO> getUserCourseGroups(@PathVariable("userId") UUID userId){
+    public Flux<CourseGroupDTO> getUserCourseGroups(@PathVariable("userId") UUID userId){ //todo: write tests before further implementation
         return dashBoardService.getUserCourseGroups(userId);
     }
 
     @GetMapping("/courseList/term/{userId}")
-    public Flux<CourseTermDTO> getUserCourseTerms(@PathVariable("userId") UUID userId){
+    public Flux<CourseTermDTO> getUserCourseTerms(@PathVariable("userId") UUID userId){ //todo: write tests before further implementation
         return dashBoardService.getUserCourseTerms(userId);
     }
 }
