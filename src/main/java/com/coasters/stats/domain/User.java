@@ -17,4 +17,16 @@ public class User {
     private String classification; //may need new name for this member means freshman/sophomore/junior/senior, etc
     private School school;
     private Set<CourseInstance> courseInstances; //todo: really need to draw out an uml diagram: should separate CourseInstances per term for student
+
+    public User(String firstName, String lastName, String classification) {
+        this.id = UUID.randomUUID();
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.classification = classification;
+    }
+
+    public User addCourseInstance(CourseInstance courseInstance){
+        this.courseInstances.add(courseInstance);
+        return this;
+    }
 }
