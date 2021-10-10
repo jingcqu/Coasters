@@ -17,4 +17,15 @@ public class School {
     private String name;
     private String description;
     private Set<College> colleges;
+
+    public School(String name, String description) {
+        this.id = UUID.randomUUID();
+        this.name = name;
+        this.description = description;
+    }
+
+    public School addCollege(College college){
+        colleges.add(college);
+        return this;
+    }
 }
