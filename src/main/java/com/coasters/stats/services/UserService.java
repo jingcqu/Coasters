@@ -11,6 +11,5 @@ import java.util.UUID;
  */
 public interface UserService {
     Mono<UserDTO> getUserDTOById(UUID id);
-    Mono<UserDTO> getUserDTOByName(String name);
     Mono<UserDTO> createUser(UserDTO userDTO);
 }

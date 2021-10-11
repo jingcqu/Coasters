@@ -1,11 +1,16 @@
 package com.coasters.stats.services;
 
+import com.coasters.stats.api.v1.convertter.UserDTOToUser;
+import com.coasters.stats.api.v1.convertter.UserToUserDTO;
 import com.coasters.stats.api.v1.domain.UserDTO;
+import com.coasters.stats.domain.User;
 import com.coasters.stats.repository.UserRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
+import java.util.Objects;
 import java.util.UUID;
 
 /**
@@ -17,18 +22,17 @@ import java.util.UUID;
 @Service
 public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
-    @Override
-    public Mono<UserDTO> getUserDTOById(UUID id) {
-        return null;
-    }
+    private UserToUserDTO userToUserDTO;
+    private UserDTOToUser userDTOToUser;
 
     @Override
-    public Mono<UserDTO> getUserDTOByName(String name) {
-        return null;
+    public Mono<UserDTO> getUserDTOById(UUID id) {
+        return userRepository.findById(id).map(userToUserDTO::convert);
     }
+
 
     @Override
     public Mono<UserDTO> createUser(UserDTO userDTO) {
-        return null;
+        return userRepository.save(Objects.requireNonNull(userDTOToUser.convert(userDTO))).map(userToUserDTO::convert);
     }
 }

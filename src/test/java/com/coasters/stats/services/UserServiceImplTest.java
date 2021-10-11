@@ -1,37 +1,61 @@
 package com.coasters.stats.services;
 
+import com.coasters.stats.api.v1.convertter.UserDTOToUser;
+import com.coasters.stats.api.v1.convertter.UserToUserDTO;
+import com.coasters.stats.api.v1.domain.UserDTO;
 import com.coasters.stats.domain.GradClass;
 import com.coasters.stats.domain.StudentLevel;
 import com.coasters.stats.domain.UndergradClass;
 import com.coasters.stats.domain.User;
 import com.coasters.stats.repository.UserRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
+import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
+import org.springframework.test.context.junit4.SpringRunner;
+import reactor.core.publisher.Mono;
+
+import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
+import static reactor.core.publisher.Mono.when;
 
+@Slf4j
+@RunWith(MockitoJUnitRunner.class)
 class UserServiceImplTest {
-    @Autowired
+
+    UserService userService;
+    @Mock
     UserRepository userRepository;
+    UserToUserDTO userToUserDTO;
+    UserDTOToUser userDTOToUser;
 
     @BeforeEach
     void setUp(){
-        userRepository.deleteAll();
+        MockitoAnnotations.openMocks(this);
+        this.userDTOToUser = new UserDTOToUser();
+        this.userToUserDTO = new UserToUserDTO();
+        userService = new UserServiceImpl(userRepository, userToUserDTO, userDTOToUser);
     }
+
 
     @Test
     void getUserDTOById() {
-        User user1 = new User("Shrek", "Green", UndergradClass.SENIOR, StudentLevel.UNDERGRADUATE);
-        User user2 = new User("Peter", "Parker", UndergradClass.FRESHMAN, StudentLevel.UNDERGRADUATE);
-        User user3 = new User("Steven", "Strange", GradClass.YEAR_3, StudentLevel.GRADUATE);
-        userRepository.save(user1);
-        userRepository.save(user2);
-        userRepository.save(user3);
-
+        User user = new User();
+        Mockito.when(userRepository.findById(any(UUID.class))).thenReturn(Mono.just(user));
+        UserDTO userDTO = userService.getUserDTOById(UUID.randomUUID()).blockOptional().get();
+        assertNotNull(userDTO);
     }
 
     @Test
     void createUser() {
+
     }
 }
