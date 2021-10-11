@@ -2,6 +2,7 @@ package com.coasters.stats.services;
 
 import com.coasters.stats.api.v1.convertter.UserDTOToUser;
 import com.coasters.stats.api.v1.convertter.UserToUserDTO;
+import com.coasters.stats.api.v1.domain.SchoolDTO;
 import com.coasters.stats.api.v1.domain.UserDTO;
 import com.coasters.stats.domain.User;
 import com.coasters.stats.repository.UserRepository;
@@ -30,9 +31,24 @@ public class UserServiceImpl implements UserService {
         return userRepository.findById(id).map(userToUserDTO::convert);
     }
 
-
     @Override
     public Mono<UserDTO> createUser(UserDTO userDTO) {
         return userRepository.save(Objects.requireNonNull(userDTOToUser.convert(userDTO))).map(userToUserDTO::convert);
     }
+
+    @Override
+    public Mono<UserDTO> updateUserSchool(UUID userId, SchoolDTO school) {
+        return null;
+    }
+
+    @Override
+    public Mono<UserDTO> addSchool(UUID uuid, SchoolDTO schoolDTO) {
+        return null;
+    }
+
+    @Override
+    public Mono<UserDTO> removeSchool(UUID uuid, SchoolDTO schoolDTO) {
+        return null;
+    }
+
 }
