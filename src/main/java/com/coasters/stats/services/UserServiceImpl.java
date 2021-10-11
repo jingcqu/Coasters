@@ -23,6 +23,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public Mono<UserDTO> getUserDTOByName(String name) {
+        return null;
+    }
+
+    @Override
     public Mono<UserDTO> createUser(UserDTO userDTO) {
         return null;
     }
