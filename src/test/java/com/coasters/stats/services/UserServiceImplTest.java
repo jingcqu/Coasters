@@ -1,5 +1,6 @@
 package com.coasters.stats.services;
 
+import com.coasters.stats.api.v1.convertter.SchoolDTOToSchool;
 import com.coasters.stats.api.v1.convertter.UserDTOToUser;
 import com.coasters.stats.api.v1.convertter.UserToUserDTO;
 import com.coasters.stats.api.v1.domain.UserDTO;
@@ -7,6 +8,7 @@ import com.coasters.stats.domain.GradClass;
 import com.coasters.stats.domain.StudentLevel;
 import com.coasters.stats.domain.UndergradClass;
 import com.coasters.stats.domain.User;
+import com.coasters.stats.repository.SchoolRepository;
 import com.coasters.stats.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
@@ -34,6 +36,9 @@ class UserServiceImplTest {
     UserService userService;
     @Mock
     UserRepository userRepository;
+    @Mock
+    SchoolRepository schoolRepository;
+
     UserToUserDTO userToUserDTO;
     UserDTOToUser userDTOToUser;
 
@@ -42,7 +47,7 @@ class UserServiceImplTest {
         MockitoAnnotations.openMocks(this);
         this.userDTOToUser = new UserDTOToUser();
         this.userToUserDTO = new UserToUserDTO();
-        userService = new UserServiceImpl(userRepository, userToUserDTO, userDTOToUser);
+        userService = new UserServiceImpl(userRepository, schoolRepository, userToUserDTO, userDTOToUser, new SchoolDTOToSchool());
     }
 
 

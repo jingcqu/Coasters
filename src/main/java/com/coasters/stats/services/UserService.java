@@ -14,7 +14,6 @@ import java.util.UUID;
 public interface UserService {
     Mono<UserDTO> getUserDTOById(UUID id);
     Mono<UserDTO> createUser(UserDTO userDTO);
-    Mono<UserDTO> updateUserSchool(UUID userId, SchoolDTO school);
     Mono<UserDTO> addSchool(UUID uuid, SchoolDTO schoolDTO);
     Mono<UserDTO> removeSchool(UUID uuid, SchoolDTO schoolDTO);
 }

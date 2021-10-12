@@ -44,16 +44,9 @@ public class CoasterBootStrap implements ApplicationListener<ContextRefreshedEve
 
     private void loadUsers(){
         User user1 = new User("Shrek", "Green", UndergradClass.SENIOR, StudentLevel.UNDERGRADUATE);
-        user1.setSchool(schoolRepository.findByName("SwampU").block());
-
         User user2 = new User("Peter", "Parker", UndergradClass.FRESHMAN, StudentLevel.UNDERGRADUATE);
-        user2.setSchool(schoolRepository.findByName("AvengerU").block());
-
         User user3 = new User("Steven", "Strange", GradClass.YEAR_3, StudentLevel.GRADUATE);
-        user3.setSchool(schoolRepository.findByName("AvengerU").block());
-
         User user4 = new User("Regina", "George", UndergradClass.SOPHOMORE, StudentLevel.UNDERGRADUATE);
-        user4.setSchool(schoolRepository.findByName("MeanGirlsU").block());
     }
 
 }

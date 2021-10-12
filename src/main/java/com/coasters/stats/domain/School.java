@@ -1,6 +1,7 @@
 package com.coasters.stats.domain;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -17,6 +18,10 @@ public class School {
     private String name;
     private String description;
     private Set<College> colleges;
+
+    public School() {
+        id = UUID.randomUUID();
+    }
 
     public School(String name, String description) {
         this.id = UUID.randomUUID();
