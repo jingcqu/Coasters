@@ -27,7 +27,7 @@ import java.util.UUID;
 public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
     private SchoolRepository schoolRepository;
-    
+
     private UserToUserDTO userToUserDTO;
     private UserDTOToUser userDTOToUser;
     private SchoolDTOToSchool schoolDTOToSchool;
